@@ -1,0 +1,41 @@
+providers:
+  - name: gemini-flash
+    type: gemini
+    base_url: https://generativelanguage.googleapis.com/v1beta
+    key_env: GEMINI_API_KEY
+    model: gemini-2.0-flash
+    rpm: 15
+    roles: [target, judge]
+  - name: openrouter-free
+    type: openrouter
+    base_url: https://openrouter.ai/api/v1
+    key_env: OPENROUTER_API_KEY
+    model: meta-llama/llama-3.3-70b-instruct:free
+    rpm: 20
+    roles: [attacker, target, judge]
+  - name: groq-fast
+    type: openai_compat
+    base_url: https://api.groq.com/openai/v1
+    key_env: GROQ_API_KEY
+    model: llama-3.3-70b-versatile
+    rpm: 30
+    roles: [target]
+  - name: together-free
+    type: openai_compat
+    base_url: https://api.together.xyz/v1
+    key_env: TOGETHER_API_KEY
+    model: meta-llama/Llama-3.3-70B-Instruct-Turbo
+    rpm: 20
+    roles: [target, judge]
+  - name: local-ollama
+    type: openai_compat
+    base_url: http://localhost:11434/v1
+    key_env: ""
+    model: dolphin-llama3
+    rpm: 600
+    roles: [attacker]
+
+judge:
+  refusal_fallback: true
+  confirm_k: 3
+  judge_model_slot: judge

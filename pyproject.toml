@@ -1,0 +1,6 @@
+[project]
+name = "jb-forge"
+version = "1.0.0"
+description = "Automated LLM jb generator + auto-tester (stdlib only, zero deps)"
+requires-python = ">=3.11"
+dependencies = []
