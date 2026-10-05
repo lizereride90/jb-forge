@@ -16,6 +16,17 @@ tests/          smoke tests
 dashboard/      run reports (sqlite + markdown)
 ```
 
+## Corpus pack (private fuel)
+
+The `corpus/` folder (techniques + seed prompts + personas) is NOT in
+git. Grab it from Releases:
+
+```bash
+# download corpus-pack.zip from Releases, then:
+unzip corpus-pack.zip   # drops corpus/ into this folder
+python scripts/forge.py generate --goal "your goal" --persona ratman3000
+```
+
 ## Quickstart
 
 ```bash
