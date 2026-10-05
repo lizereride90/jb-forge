@@ -1,0 +1,6 @@
+corpus/
+.env
+dashboard/runs.db
+__pycache__/
+*.pyc
+*.pyo
